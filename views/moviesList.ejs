@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--title处写获取到的电影分类-->
+    <title>电影详情页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/bootstrap-3.3.0/dist/css/bootstrap.min.css"/>
+    <link rel='stylesheet' href='/stylesheets/moviesList.css' />
+</head>
+<body>
+<!--h1处写获取用户点击的电影类型，如正在热映等-->
+<div class="container-fluid">
+    <h1 class="well text-center"><%= cate %></h1>
+    <% list.forEach(function(item,index){ %>
+        <div class="moviePic">
+        <a class="detaillink" href="comment">查看详情</a>
+        <a class="movieimg" href="comment">
+            <img src="<%= item.images.large %>">
+        </a>
+        <a class="movieName" href="comment">
+            <p><%= item.title %></p>
+            <div class="movieActor">
+                <% item.casts.forEach(function(i,x){%>
+                <span><%=i.name%></span>
+              <%}) %>
+            </div>
+        </a>
+    </div>
+    <% }) %>
+
+</div>
+</body>
+</html>
